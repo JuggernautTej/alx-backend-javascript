@@ -1,4 +1,4 @@
-/* eslint-disable */
+/** */
 export default function getListStudents() {
     const data = [];
     const dataObj = {};
