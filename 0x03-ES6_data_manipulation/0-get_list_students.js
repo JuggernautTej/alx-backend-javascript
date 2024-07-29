@@ -4,17 +4,17 @@ export default function getListStudents() {
     const dataObj = {};
     
     dataObj.id = 1;
-    dataObj.firstname = 'Guillaume';
+    dataObj.firstName = 'Guillaume';
     dataObj.location = 'San Francisco';
     data.push({ ...dataObj});
 
     dataObj.id = 2;
-    dataObj.firstname = 'James';
+    dataObj.firstName = 'James';
     dataObj.location = 'Columbia';
     data.push({ ...dataObj});
 
     dataObj.id = 5;
-    dataObj.firstname = 'Serena';
+    dataObj.firstName = 'Serena';
     dataObj.location = 'San Francisco';
     data.push({ ...dataObj});
     return data;
