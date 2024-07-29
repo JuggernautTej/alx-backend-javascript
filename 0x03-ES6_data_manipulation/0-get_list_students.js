@@ -1,7 +1,21 @@
 /* eslint-disable */
 export default function getListStudents() {
-    return [ {id: 1, firstname: "Guillaume", location: "San Francisco" },
-        { id: 2, firstname: "James", location: "Columbia" },
-        { id: 5, firstname: "Serena", location: "San Francisco"}
-     ];
+    const data = [];
+    const dataObj = {};
+    
+    dataObj.id = 1;
+    dataObj.firstname = 'Guillaume';
+    dataObj.location = 'San Francisco';
+    data.push({ ...dataObj});
+
+    dataObj.id = 2;
+    dataObj.firstname = 'James';
+    dataObj.location = 'Columbia';
+    data.push({ ...dataObj});
+
+    dataObj.id = 5;
+    dataObj.firstname = 'Serena';
+    dataObj.location = 'San Francisco';
+    data.push({ ...dataObj});
+    return data;
 }
