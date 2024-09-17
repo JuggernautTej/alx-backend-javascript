@@ -1,4 +1,4 @@
-/*eslint disable*/
+/*eslint-disable*/
 const { spawn } = require('node:child_process');
 const child =  spawn('node');
 console.log('Welcome to Holberton School, what is your name?');
