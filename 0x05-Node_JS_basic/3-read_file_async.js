@@ -1,6 +1,4 @@
-const { queryObjects } = require('v8');
-
-/*eslint-diable*/
+/*eslint-disable*/
 const fs = require('fs').promises;
 
 function countStudents(path) {
