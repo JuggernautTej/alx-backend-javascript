@@ -13,6 +13,7 @@ function countStudents(path) {
         }
         // Extract the header
         const header = lines[0].split(',');
+    
         const studentsByField = {};
         for (let x = 1; x < lines.length; x++) {
             const line = lines[x].trim();
@@ -28,11 +29,13 @@ function countStudents(path) {
                 }
             }
         }
+        // Calculate the total number of students
         const totalStudents = Object.values(studentsByField)
                                      .reduce((acc, students) => acc + students.length, 0);
         console.log(`Number of students: ${totalStudents}`);
+        // Log the number of students per field
         for (const [field, students] of Object.entries(studentsByField)) {
-            console.log(`Number of students in ${field}: ${studentsByField}. List: ${students.join(', ')}`);
+            console.log(`Number of students in ${field}: ${students.length}. List: ${students.join(', ')}`);
         } 
     } catch (error) {
         console.error('Cannot load the database');
