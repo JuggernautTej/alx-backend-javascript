@@ -1,30 +1,31 @@
 /*eslint-disable*/
-const assert = require("assert");
-const calculateNumber = require("./1-calcul");
+// const assert = require("assert");
+const calculateNumber = require("./2-calcul_chai");
+const { expect } = require("chai");
 
 describe('Calculate Tests', function () {
     describe('SUM tests', function() {
         it('should return -8', function () {
-            assert.equal(calculateNumber(-1.7, -6.4, 'SUM'), -8);
+            expect(calculateNumber(-1.7, -6.4, 'SUM').to.equal(-8));
         });
         it('should return 15', function () {
-            assert.equal(calculateNumber(11.7, 3.4, 'SUM'), 15);
+            expect(calculateNumber(11.7, 3.4, 'SUM').to.equal(15));
         });
     });
     describe('SUBTRACT tests', function() {
         it('should return 3', function () {
-            assert.equal(calculateNumber(5.7, 3.4, 'SUBTRACT'), 3);
+            expect(calculateNumber(5.7, 3.4, 'SUBTRACT').to.equal(3));
         });
         it('should return -1', function () {
-            assert.equal(calculateNumber(2.6, 3.5, 'SUBTRACT'), -1);
+            expect(calculateNumber(2.6, 3.5, 'SUBTRACT').to.equal(-1));
         });
     });
     describe('DIVIDE tests', function() {
         it('should return 2', function () {
-            assert.equal(calculateNumber(5.7, 3.4, 'DIVIDE'), 2);
+            expect(calculateNumber(5.7, 3.4, 'DIVIDE').to.equal(2));
         });
         it('should return Error', function () {
-            assert.equal(calculateNumber(5.7, 0, 'DIVIDE'), 'Error');
+            expect(calculateNumber(5.7, 0, 'DIVIDE').to.equal('Error'));
         });
     });
 });
