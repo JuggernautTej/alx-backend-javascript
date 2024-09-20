@@ -10,9 +10,8 @@ function calculateNumber(a, b, type) {
     } else if (type === 'DIVIDE') {
             if (roundedB === 0) {
                 return "Error"
-            } else {
+            }
         return roundedA / roundedB;
-        }
     }
     }
 
