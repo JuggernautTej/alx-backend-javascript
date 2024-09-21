@@ -30,9 +30,9 @@ function countStudents(database) {
                                         .reduce((acc, students) => acc + students.length, 0);
             let result = `Number of students: ${totalStudents}\n`;
             for (const [field, students] of Object.entries(studentsByField)) {
-                result += `Number of students in ${field}: ${students.length}. List: ${students.join(', ')}`;
+                result += `Number of students in ${field}: ${students.length}. List: ${students.join(', ')}\n`;
             }
-            return result;
+            return result.trim();
         })
         .catch((error) => {
             console.error('Cannot load the database');
@@ -51,10 +51,11 @@ const app = http.createServer((req, res) => {
             res.write('This is the list of our students\n');
             countStudents(database)
                 .then((result) => {
-                    res.write(result);
-                    res.end();
+                    // res.write(result);
+                    res.end(result);
                 })
-                .catch(() => {
+                .catch((error) => {
+                    res.statusCode = 404;
                     res.end('Cannot load the database\n');
                 });
             break;
